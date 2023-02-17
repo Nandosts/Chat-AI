@@ -11,7 +11,7 @@
       <%= form_tag('/image_generation', method: :post, class: 'form_generation') do %>
         <%= text_field_tag('prompt', nil, placeholder: 'Descreva a imagem desejada') %>
 
-        <%= submit_tag('Generate', class: 'button') %>
+        <%= submit_tag('Gerar imagem', class: 'button') %>
       <% end %>
       <div class="result">
         <!-- A imagem gerada será exibida aqui -->

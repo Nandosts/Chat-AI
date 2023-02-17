@@ -11,7 +11,7 @@
       <%= form_tag '/image_variants', method: 'post', multipart: true, id: 'image-variants-form' do %>
         <%= file_field_tag :image, id: 'image-file-input' %>
 
-        <%= submit_tag 'Enviar', class: 'button'%>
+        <%= submit_tag 'Gerar variações', class: 'button'%>
       <% end %>
       <ul class="result" id="variants">
         <!-- A imagens geradas serão exibidas aqui -->
