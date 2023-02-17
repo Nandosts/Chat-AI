@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Chat</title>
+    <title>Chat AI</title>
     <%= stylesheet_link_tag 'chat' %>
   </head>
 
   <body>
     <main>
-      <h1>Chat GPT</h1>
+      <h1>Chat AI</h1>
       <%= form_tag('/chat', method: :get) do %>
         <%= text_field_tag(:message, params[:message], placeholder: "Digite sua mensagem") %>
         <%= submit_tag 'Enviar', class: 'button'%>
@@ -16,7 +16,7 @@
 
       <% if @response.present? %>
         <p><strong>Você disse:</strong> <%= @message %></p>
-        <p class="response"><strong>O ChatGPT respondeu:</strong> <%= simple_format(@response) %></p>
+        <p class="response"><strong>O ChatAI respondeu:</strong> <%= simple_format(@response) %></p>
       <% end %>
     </main>
   </body>
