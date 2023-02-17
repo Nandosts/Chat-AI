@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Generate Variant</title>
+    <title>Variação de imagem</title>
     <%= stylesheet_link_tag 'image_variants' %>
   </head>
 
   <body>
     <main>
-      <h1>Generate Variant</h1>
+      <h1>Variação de imagem</h1>
       <%= form_tag '/image_variants', method: 'post', multipart: true, id: 'image-variants-form' do %>
         <%= file_field_tag :image, id: 'image-file-input' %>
 

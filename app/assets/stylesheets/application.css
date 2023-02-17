@@ -13,38 +13,72 @@
  *= require_self
  */
 
-
-body {
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  margin: 0;
-  background: #131516;
-  color: #d8d4cf;
+:root {
+  --background-color: #222;
+  --text-color: #fff;
+  --primary-color: #2980b9;
+  --secondary-color: #2c3e50;
 }
 
-.navbar {
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: var(--primary-color);
+  padding: 1rem;
 }
 
 .logo {
   height: 50px;
+  margin-right: 1rem;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  margin-left: 1rem;
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--secondary-color);
+}
+
+main {
+  padding: 1rem;
 }
 
 #loading {
-  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
   top: 0;
-  right: 0;
-  bottom: 0;
   left: 0;
   width: 100%;
   height: 100%;
   display: flex;
-  place-content: center;
-  place-items: center;
-  background: #00000050;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
 }
+
 .lds-roller {
   display: inline-block;
   position: relative;
@@ -129,4 +163,3 @@ body {
     transform: rotate(360deg);
   }
 }
-

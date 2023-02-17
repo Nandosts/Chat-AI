@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Generate Image</title>
+    <title>Gerador de imagem</title>
     <%= stylesheet_link_tag 'image_generations' %>
   </head>
 
   <body>
     <main>
-      <h1>Generate Image</h1>
+      <h1>Gerador de imagem</h1>
       <%= form_tag('/image_generation', method: :post, class: 'form_generation') do %>
         <%= text_field_tag('prompt') %>
         <%= submit_tag('Generate', class: 'button') %>
