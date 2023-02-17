@@ -1,11 +1,13 @@
+# frozen_string_literal: true
+
 require 'openai'
 
 class ChatController < ApplicationController
   def index
     @message = params[:message] || ''
-    if @message.present?
-      @response = generate_response(@message)
-    end
+    return unless @message.present?
+
+    @response = generate_response(@message)
   end
 
   private
@@ -29,10 +31,8 @@ class ChatController < ApplicationController
     #   return "Desculpe, ocorreu um erro ao gerar uma resposta."
     # end
 
-    if response.dig("choices", 0, "text").present?
-      return response.dig("choices", 0, "text")
-    else
-      return "Desculpe, não consegui gerar uma resposta a partir da entrada fornecida."
-    end
+    return response.dig('choices', 0, 'text') if response.dig('choices', 0, 'text').present?
+
+    'Desculpe, não consegui gerar uma resposta a partir da entrada fornecida.'
   end
 end
