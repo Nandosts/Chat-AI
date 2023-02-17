@@ -1,13 +1,24 @@
-<%= javascript_pack_tag 'image_variants' %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Generate Variant</title>
+    <%= stylesheet_link_tag 'image_variants' %>
+  </head>
 
-<%= form_tag '/image_variants', method: 'post', multipart: true, id: 'image-variants-form' do %>
-  <%= file_field_tag :image, id: 'image-file-input' %>
+  <body>
+    <main>
+      <h1>Generate Variant</h1>
+      <%= form_tag '/image_variants', method: 'post', multipart: true, id: 'image-variants-form' do %>
+        <%= file_field_tag :image, id: 'image-file-input' %>
 
-  <%= submit_tag 'Enviar' %>
-<% end %>
-
-<ul id="variants"></ul>
-
-<div id="loading" style="display: none">
-  <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div>
-</div>
+        <%= submit_tag 'Enviar', class: 'button'%>
+      <% end %>
+      <ul class="result" id="variants">
+        <!-- A imagens geradas serão exibidas aqui -->
+      </ul>
+      
+      <div id="message"></div>
+    </main>
+    <script src="<%= asset_pack_path 'image_variants.js' %>"></script>
+  </body>
+</html>

@@ -10,14 +10,26 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
  *= require_self
  */
 
- .response {
-  margin-top: 20px;
-  background-color: #f9f9f9;
-  padding: 10px;
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  margin: 0;
+  background: #131516;
+  color: #d8d4cf;
+}
+
+.navbar {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+.logo {
+  height: 50px;
 }
 
 #loading {

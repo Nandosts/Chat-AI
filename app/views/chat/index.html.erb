@@ -1,13 +1,23 @@
-<h1>ChatGPT</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chat</title>
+    <%= stylesheet_link_tag 'chat' %>
+  </head>
 
-<%= form_tag('/chat', method: :get) do %>
-  <%= text_field_tag(:message, params[:message], placeholder: "Digite sua mensagem") %>
-  <%= submit_tag("Enviar") %>
-<% end %>
+  <body>
+    <main>
+      <h1>Chat GPT</h1>
+      <%= form_tag('/chat', method: :get) do %>
+        <%= text_field_tag(:message, params[:message], placeholder: "Digite sua mensagem") %>
+        <%= submit_tag 'Enviar', class: 'button'%>
 
-<% if @response.present? %>
-  <p><strong>Você disse:</strong> <%= @message %></p>
-  <p class="response"><strong>O ChatGPT respondeu:</strong> <%= simple_format(@response) %></p>
-<% end %>
+      <% end %>
 
-
+      <% if @response.present? %>
+        <p><strong>Você disse:</strong> <%= @message %></p>
+        <p class="response"><strong>O ChatGPT respondeu:</strong> <%= simple_format(@response) %></p>
+      <% end %>
+    </main>
+  </body>
+</html>

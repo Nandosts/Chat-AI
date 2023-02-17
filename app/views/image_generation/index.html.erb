@@ -1,16 +1,25 @@
-<%= javascript_pack_tag 'image_generations' %>
-<%= stylesheet_link_tag 'image_generations' %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Generate Image</title>
+    <%= stylesheet_link_tag 'image_generations' %>
+  </head>
 
-<h1>Generate Image</h1>
-<%= form_tag('/image_generation', method: :post, class: 'form') do %>
-  <%= label_tag('prompt', 'Prompt', class: 'label') %>
-  <%= text_field_tag('prompt', class: 'input') %>
-  <%= submit_tag('Generate', class: 'button') %>
-<% end %>
-
-
-<div id="result"></div>
-
-<div id="loading" style="display: none">
-  <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div>
-</div>
+  <body>
+    <main>
+      <h1>Generate Image</h1>
+      <%= form_tag('/image_generation', method: :post, class: 'form_generation') do %>
+        <%= text_field_tag('prompt') %>
+        <%= submit_tag('Generate', class: 'button') %>
+      <% end %>
+      <div class="result">
+        <!-- A imagem gerada será exibida aqui -->
+      </div>
+      <div id="loading" style="display: none">
+        <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div>
+      </div>
+      <div id="message"></div>
+    </main>
+    <script src="<%= asset_pack_path 'image_generations.js' %>"></script>
+  </body>
+</html>

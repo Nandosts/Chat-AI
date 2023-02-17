@@ -9,7 +9,7 @@ class ImageGenerationController < ApplicationController
     response = HTTParty.post('https://api.openai.com/v1/images/generations',
                              headers: { 'Content-Type' => 'application/json',
                                         'Authorization' => "Bearer #{api_key}" },
-                             body: { 'model' => 'image-alpha-001', 'prompt' => prompt }.to_json)
+                             body: { 'model' => 'image-alpha-001', 'size' => "1024x1024", 'prompt' => prompt }.to_json)
     render json: { 'data' => response['data'][0]['url'] }
   end
 end
