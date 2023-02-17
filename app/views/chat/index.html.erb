@@ -1,0 +1,13 @@
+<h1>ChatGPT</h1>
+
+<%= form_tag('/chat', method: :get) do %>
+  <%= text_field_tag(:message, params[:message], placeholder: "Digite sua mensagem") %>
+  <%= submit_tag("Enviar") %>
+<% end %>
+
+<% if @response.present? %>
+  <p><strong>Você disse:</strong> <%= @message %></p>
+  <p class="response"><strong>O ChatGPT respondeu:</strong> <%= simple_format(@response) %></p>
+<% end %>
+
+

@@ -1,0 +1,9 @@
+<%= javascript_pack_tag 'image_variants' %>
+
+<%= form_tag '/image_variants', method: 'post', multipart: true, id: 'image-variants-form' do %>
+  <%= file_field_tag :image, id: 'image-file-input' %>
+
+  <%= submit_tag 'Enviar' %>
+<% end %>
+
+<ul id="variants"></ul>
