@@ -1,0 +1,2 @@
+module ImageGenerationHelper
+end

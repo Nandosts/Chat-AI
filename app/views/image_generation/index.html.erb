@@ -1,0 +1,16 @@
+<%= javascript_pack_tag 'image_generations' %>
+<%= stylesheet_link_tag 'image_generations' %>
+
+<h1>Generate Image</h1>
+<%= form_tag('/image_generation', method: :post, class: 'form') do %>
+  <%= label_tag('prompt', 'Prompt', class: 'label') %>
+  <%= text_field_tag('prompt', class: 'input') %>
+  <%= submit_tag('Generate', class: 'button') %>
+<% end %>
+
+
+<div id="result"></div>
+
+<div id="loading" style="display: none">
+  <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div>
+</div>
