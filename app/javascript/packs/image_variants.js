@@ -4,11 +4,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("image-variants-form");
   const variantsList = document.getElementById("variants");
   let loading = false;
+  const loader = document.getElementById("loading");
+
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
     if (loading === false) {
       loading = true
       const imageFile = document.getElementById("image-file-input").files[0];
+
+      // Mostra o elemento de carregamento
+      loader.style.display = "flex";
       const token = process.env.OPENAI_API_KEY; // substitua pela sua chave de API
 
       try {
@@ -41,6 +46,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       } catch (error) {
         console.error(error);
+      } finally {
+        // Oculta o elemento de carregamento
+        loader.style.display = "none";
       }
     }
   });
