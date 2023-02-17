@@ -39,9 +39,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (response.data.data) {
           response.data.data.forEach((variant) => {
+            const variantLi = document.createElement("li");
             const variantImage = document.createElement("img");
             variantImage.src = variant.url;
-            variantsList.appendChild(variantImage);
+            variantImage.loading = "lazy";
+            variantLi.appendChild(variantImage);
+            variantsList.appendChild(variantLi);
           });
         }
       } catch (error) {
