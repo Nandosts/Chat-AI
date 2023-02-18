@@ -12,6 +12,9 @@
  *
  *= require_self
  */
+ @import 'chat';
+ @import 'image_generation';
+ @import 'image_variants';
 
 :root {
   --background-color: #222;
