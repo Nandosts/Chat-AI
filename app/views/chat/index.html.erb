@@ -4,19 +4,22 @@
     <title>Chat AI</title>
     <%= stylesheet_link_tag 'chat' %>
   </head>
-
   <body>
     <main>
       <h1>Chat AI</h1>
       <%= form_tag('/chat', method: :get) do %>
-        <%= text_field_tag(:message, params[:message], placeholder: "Digite sua mensagem") %>
+        <%# Não estava pegando o estilo no arquivo css, por algum motivo %>
+        <textarea name="message" placeholder="Digite sua mensagem" class="message-box" style="resize: both; height: 150px; width: 100%; padding: 12px 20px; border: 2px solid #ccc; box-sizing: border-box; border-radius: 4px;"><%= params[:message] %></textarea>
         <%= submit_tag 'Enviar', class: 'button'%>
-
       <% end %>
-
       <% if @response.present? %>
-        <p><strong>Você disse:</strong> <%= @message %></p>
-        <p class="response"><strong>O ChatAI respondeu:</strong> <%= simple_format(@response) %></p>
+        <div class="message-info">
+          <p><strong>Você disse:</strong> <%= @message %></p>
+          <p><strong>O ChatAI respondeu:</strong></p>
+        </div>
+        <div class="response">
+          <%= simple_format(@response) %>
+        </div>
       <% end %>
     </main>
   </body>

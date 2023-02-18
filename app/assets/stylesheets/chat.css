@@ -15,33 +15,46 @@ form {
   margin-bottom: 20px;
 }
 
-input[type="text"] {
-  display: block;
+/* .message-box {
   width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-bottom: 10px;
-}
-
-input[type="submit"] {
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #888;
+  border-radius: 4px;
   background-color: #333;
+  font-size: 16px;
+  color: #eee;
+  resize: none;
+} */
+
+.button {
+  background-color: #4CAF50;
   color: #fff;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 16px;
 }
 
 .response {
-  background-color: #ffffff05;
+  background-color: #555;
   padding: 10px;
   margin-top: 20px;
   border-radius: 5px;
 }
 
-.response strong {
-  display: block;
+.message-info {
   margin-bottom: 10px;
   font-size: 18px;
+}
+
+.message-info strong {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.response p {
+  margin-bottom: 5px;
 }
