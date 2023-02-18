@@ -10,6 +10,9 @@ Bundler.require(*Rails.groups)
 
 module ChatAI
   class Application < Rails::Application
+    # Require webpacker
+    require 'webpacker'
+
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
