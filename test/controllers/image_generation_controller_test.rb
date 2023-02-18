@@ -7,4 +7,9 @@ class ImageGenerationControllerTest < ActionDispatch::IntegrationTest
     get image_generation_index_url
     assert_response :success
   end
+
+  test 'should get generate_image' do
+    get image_generation_generate_image_url
+    assert_response :success
+  end
 end

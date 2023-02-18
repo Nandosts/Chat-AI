@@ -3,7 +3,8 @@
 require 'test_helper'
 
 class ImageVariantsControllerTest < ActionDispatch::IntegrationTest
-  # test "the truth" do
-  #   assert true
-  # end
+  test 'should get index' do
+    get image_variants_index_url
+    assert_response :success
+  end
 end

@@ -2,11 +2,11 @@
 <html>
   <head>
     <title>Variação de imagem</title>
-    <%= stylesheet_link_tag 'image_variants' %>
+    <%= stylesheet_link_tag 'image_variants', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <main>
+    <main class="image-variants">
       <h1>Variação de imagem</h1>
       <%= form_tag '/image_variants', method: 'post', multipart: true, id: 'image-variants-form' do %>
         <%= file_field_tag :image, id: 'image-file-input' %>
@@ -19,7 +19,7 @@
       
       <div id="message"></div>
     </main>
-    <script src="/assets/packs/image_variants.js"></script>
+    <%= javascript_pack_tag 'image_variants' %>
 
   </body>
 </html>

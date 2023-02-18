@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Gerador de imagem</title>
-    <%= stylesheet_link_tag 'image_generations' %>
+    <%= stylesheet_link_tag 'image_generation', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
@@ -21,6 +21,6 @@
       </div>
       <div id="message"></div>
     </main>
-    <script src="/assets/packs/image_generations.js"></script>
+    <%= javascript_pack_tag 'image_generations' %>
   </body>
 </html>

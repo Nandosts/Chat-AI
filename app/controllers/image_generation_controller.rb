@@ -12,6 +12,7 @@ class ImageGenerationController < ApplicationController
                              headers: { 'Content-Type' => 'application/json',
                                         'Authorization' => "Bearer #{api_key}" },
                              body: { 'model' => 'image-alpha-001', 'size' => '1024x1024', 'prompt' => prompt }.to_json)
+
     render json: { 'data' => response['data'][0]['url'] }
   end
 end
