@@ -38,7 +38,6 @@ gem 'ruby-openai'
 source 'https://rails-assets.org' do
   gem 'rails-assets-axios'
 end
-gem 'webpacker'
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"

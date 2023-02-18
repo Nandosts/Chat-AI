@@ -6,7 +6,6 @@ Projeto em Ruby on Rails 7 que implementa algumas funcionalidades do OpenAI.
 - `httparty` - Para requisições HTTP
 - `ruby-openai` - Para acesso à API do OpenAI
 - `rails-assets-axios` - Para requisições HTTP assíncronas
-- `webpacker` - Para empacotamento de assets
 
 ## Funcionalidades
 
