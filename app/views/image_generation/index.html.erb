@@ -5,21 +5,21 @@
   </head>
 
   <body>
-    <main>
+    <main class="image-generation">
       <h1>Gerador de imagem</h1>
-      <%= form_tag('#', method: :post, class: 'form_generation') do %>
-        <%= text_field_tag('prompt', nil, placeholder: 'Descreva a imagem desejada') %>
+      <form class="form_generation">
+        <input type="text" name="prompt" id="prompt" placeholder="Descreva a imagem desejada">
 
-        <%= submit_tag('Gerar imagem', class: 'button') %>
-      <% end %>
+        <button type="submit" class="button">Gerar imagem</button>
+      </form>
+
       <div class="result">
-        <!-- A imagem gerada será exibida aqui -->
+        <!-- As imagens geradas serão exibidas aqui -->
       </div>
-      <div id="loading" style="display: none">
-        <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div>
-      </div>
+
       <div id="message"></div>
     </main>
+
     <%= javascript_pack_tag 'image_generations' %>
   </body>
 </html>

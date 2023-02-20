@@ -7,11 +7,11 @@
   <body>
     <main class="image-variants">
       <h1>Variação de imagem</h1>
-      <%= form_tag '#', method: 'post', multipart: true, id: 'image-variants-form' do %>
-        <%= file_field_tag :image, id: 'image-file-input' %>
+      <form enctype="multipart/form-data" id="image-variants-form">
+        <input type="file" name="image" id="image-file-input">
 
-        <%= submit_tag 'Gerar variações', class: 'button'%>
-      <% end %>
+        <button type="submit" class="button">Gerar variações</button>
+      </form>
       <ul class="result" id="variants">
         <!-- A imagens geradas serão exibidas aqui -->
       </ul>
