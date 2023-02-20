@@ -7,7 +7,7 @@
   <body>
     <main>
       <h1>Gerador de imagem</h1>
-      <%= form_tag(method: :get, class: 'form_generation', id: 'image-generation-form') do %>
+      <%= form_tag('#', method: :post, class: 'form_generation') do %>
         <%= text_field_tag('prompt', nil, placeholder: 'Descreva a imagem desejada') %>
 
         <%= submit_tag('Gerar imagem', class: 'button') %>
