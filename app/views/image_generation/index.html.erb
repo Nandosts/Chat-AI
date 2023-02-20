@@ -7,19 +7,17 @@
   <body>
     <main class="image-generation">
       <h1>Gerador de imagem</h1>
-      <form method="post" class="form_generation">
-        <input type="text" name="prompt" id="prompt" placeholder="Descreva a imagem desejada">
+      <%= form_tag('/image_generation', method: :post, class: 'form_generation', id: 'image-generation-form') do %>
+        <%= text_field_tag('prompt', nil, placeholder: 'Descreva a imagem desejada') %>
 
-        <button type="submit" class="button">Gerar imagem</button>
-      </form>
-
+        <%= submit_tag('Gerar imagem', class: 'button') %>
+      <% end %>
       <div class="result">
         <!-- As imagens geradas serão exibidas aqui -->
       </div>
 
       <div id="message"></div>
     </main>
-
     <%= javascript_pack_tag 'image_generations' %>
   </body>
 </html>
