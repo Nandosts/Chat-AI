@@ -1,6 +1,6 @@
 import axios from "axios";
 
-document.addEventListener("turbolinks:load", () => {
+document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("image-variants-form");
   const variantsList = document.getElementById("variants");
   let loading = false;

@@ -1,4 +1,5 @@
-document.addEventListener("turbolinks:load", () => {
+document.addEventListener("DOMContentLoaded", () => {
+  
   const loader = document.getElementById("loading");
 
   document
