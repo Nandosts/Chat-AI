@@ -25,7 +25,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const axiosConfig = {
           headers: {
-            Authorization: `Bearer ${token}`,
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'multipart/form-data',
+            'size': '512x512',
           },
         };
 
