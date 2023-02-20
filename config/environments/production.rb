@@ -4,7 +4,8 @@ require 'active_support/core_ext/integer/time'
 
 Rails.application.configure do
   # railsway host
-  config.hosts << "chat-ai-production-1d14.up.railway.app", "nandosts-chat-ai.netlify.app"
+  config.hosts += ["chat-ai-production-1d14.up.railway.app", "nandosts-chat-ai.netlify.app"]
+
 
   # Settings specified here will take precedence over those in config/application.rb.
 
