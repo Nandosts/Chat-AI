@@ -21,5 +21,15 @@
         </div>
       <% end %>
     </main>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const loading = document.getElementById("loading");
+
+        document.querySelector("form").addEventListener("submit", () => {
+          loading.style.display = "flex";
+        });
+      });
+
+    </script>
   </body>
 </html>
