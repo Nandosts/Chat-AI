@@ -8,11 +8,15 @@ class ImageGenerationController < ApplicationController
   def generate_image
     api_key = ENV['OPENAI_API_KEY']
     prompt = params[:prompt]
-    response = HTTParty.post('https://api.openai.com/v1/images/generations',
-                             headers: { 'Content-Type' => 'application/json',
-                                        'Authorization' => "Bearer #{api_key}" },
-                             body: { 'model' => 'image-alpha-001', 'size' => '1024x1024', 'prompt' => prompt }.to_json)
+    begin
+      response = HTTParty.post('https://api.openai.com/v1/images/generations',
+                               headers: { 'Content-Type' => 'application/json',
+                                          'Authorization' => "Bearer #{api_key}" },
+                               body: { 'model' => 'image-alpha-001', 'size' => '1024x1024', 'prompt' => prompt }.to_json)
 
-    render json: { 'data' => response['data'][0]['url'] }
+      render json: { 'data' => response['data'][0]['url'] }
+    rescue HTTParty::Error, StandardError => e
+      render json: { 'error' => e.message }, status: :internal_server_error
+    end
   end
 end
