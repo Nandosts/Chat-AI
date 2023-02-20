@@ -63,4 +63,3 @@ gem 'ruby-openai'
 source 'https://rails-assets.org' do
   gem 'rails-assets-axios'
 end
-gem 'jekyll'
